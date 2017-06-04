@@ -56,7 +56,7 @@ void ph_send_intr()
   #if (defined TEST_PHYSICAL) || (defined TEST_DATALINK) || (defined TEST_SERVICE)
   char c;
   while(out_char_queue(&ph_send_queue, &c)) {
-    ph_receive_intr(c);
+    Serial.write(c);
   }
   #endif
 }

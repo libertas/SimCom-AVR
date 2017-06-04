@@ -6,7 +6,7 @@
 #include "CharQueue.h"
 #include "SimCom.h"
 
-#define PH_BUF_LEN 500
+#define PH_BUF_LEN 210
 
 /*
   These functions should be called only by the data link layer
