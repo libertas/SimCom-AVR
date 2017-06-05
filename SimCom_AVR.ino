@@ -27,10 +27,12 @@ void setup()
 
 void loop()
 {
-  static unsigned int t = 0;
-  if(millis() - t > 1000) {
+  char msg[50];
+  static unsigned long t = 0;
+  if(millis() - t > 10) {
     t = millis();
-    sl_send(0, 0, "Test\r\n", 6);
+    sprintf(msg, "%ld\r\n", t);
+    sl_send(0, 0, msg, strlen(msg));
   }
   ph_send_intr();
 }
