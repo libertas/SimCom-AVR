@@ -3,6 +3,8 @@
 
 #include <stdbool.h>
 
+#include <HardwareSerial.h>
+
 #include "CharQueue.h"
 #include "SimCom.h"
 

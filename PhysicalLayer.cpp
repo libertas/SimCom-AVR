@@ -1,5 +1,7 @@
 #include "PhysicalLayer.h"
 
+extern HardwareSerial Serial;
+
 char ph_send_queue_buf[PH_BUF_LEN];
 char ph_receive_queue_buf[PH_BUF_LEN];
 
@@ -53,10 +55,8 @@ void ph_send_intr()
     You must call this function timely to send the data in the queue
     This function must be modified to use different types of physical devices
   */
-  #if (defined TEST_PHYSICAL) || (defined TEST_DATALINK) || (defined TEST_SERVICE)
   char c;
   while(out_char_queue(&ph_send_queue, &c)) {
     Serial.write(c);
   }
-  #endif
 }
